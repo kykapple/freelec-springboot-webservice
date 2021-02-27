@@ -16,8 +16,8 @@ public class PostsApiController {
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
     }
-
-    @PutMapping("/api/v1/posts/{id}")
+                                        // ResponseBody - 자바 객체를 JSON 데이터로 변환하여 전달
+    @PutMapping("/api/v1/posts/{id}")   // @RequestBody - 프론트에서 전달받은 JSON 데이터를 해당 파라미터에 매핑
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
@@ -25,5 +25,11 @@ public class PostsApiController {
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
+    }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
     }
 }
