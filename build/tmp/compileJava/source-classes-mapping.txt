@@ -39,6 +39,8 @@ com/jojoldu/book/springboot/web/dto/PostsListResponseDto.java
  com.jojoldu.book.springboot.web.dto.PostsListResponseDto
 com/jojoldu/book/springboot/config/auth/LoginUser.java
  com.jojoldu.book.springboot.config.auth.LoginUser
+com/jojoldu/book/springboot/config/JpaConfig.java
+ com.jojoldu.book.springboot.config.JpaConfig
 com/jojoldu/book/springboot/domain/posts/Posts.java
  com.jojoldu.book.springboot.domain.posts.Posts
  com.jojoldu.book.springboot.domain.posts.Posts$PostsBuilder

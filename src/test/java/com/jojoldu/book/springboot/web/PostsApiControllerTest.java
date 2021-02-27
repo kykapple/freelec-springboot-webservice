@@ -58,7 +58,7 @@ public class PostsApiControllerTest {
     @Test
     @WithMockUser(roles = "USER")   // 인증된 모의(가짜) 사용자를 만들어서 사용 -> roles에 권한 추가 가능
                                     // 즉, ROLE_USER 권한을 가진 사용자가 API를 요청하는 것과 동일한 효과를 가짐
-    public void Posts_등록된다() throws Exception {
+    public void Posts_Register() throws Exception { // 게시글 등록
         // given
         String title = "title";
         String content = "content";
@@ -88,7 +88,7 @@ public class PostsApiControllerTest {
 
     @Test
     @WithMockUser(roles = "USER")   // MockMvc에서만 작동
-    public void Posts_수정된다() throws Exception {
+    public void Posts_Update() throws Exception {   // 게시글 수정
         // given
         Posts savedPosts = postsRepository.save(Posts.builder().title("title").content("content").author("author").build());
 
