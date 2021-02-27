@@ -42,6 +42,8 @@ dependencies {
                                                                             // spring-security-oauth2-client와 jose를 기본으로 관리해줌
     compile('org.springframework.session:spring-session-jdbc')
     testCompile('org.springframework.security:spring-security-test')    // 스프링 시큐리티 테스트를 위한 여러 도구 지원
+
+    compile('org.mariadb.jdbc:mariadb-java-client') // MariaDB 드라이버 등록
 }
 
 test {
