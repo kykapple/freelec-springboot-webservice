@@ -19,3 +19,6 @@ notifications:
   email:
     recipients:
       - "kykapple@naver.com"
+
+before_install:
+  - chmod +x gradlew
