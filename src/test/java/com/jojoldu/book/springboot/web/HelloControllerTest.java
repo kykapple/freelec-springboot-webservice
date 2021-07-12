@@ -28,7 +28,9 @@ public class HelloControllerTest {
     public void return_hello() throws Exception {
         String hello = "hello";
 
-        mvc.perform(get("/hello")).andExpect(status().isOk()).andExpect(content().string(hello));
+        mvc.perform(get("/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(hello));
     }
 
     @WithMockUser(roles = "USER")
@@ -37,8 +39,12 @@ public class HelloControllerTest {
         String name = "hello";
         int amount = 1000;
 
-        mvc.perform(get("/hello/dto").param("name", name).param("amount", String.valueOf(amount))).
-                andExpect(status().isOk()).andExpect(jsonPath("$.name", is(name))).
-                    andExpect(jsonPath("$.amount", is(amount)));
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name", name)
+                        .param("amount", String.valueOf(amount)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount)));
     }
 }
